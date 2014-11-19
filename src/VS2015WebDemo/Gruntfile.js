@@ -4,6 +4,7 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkID=513275&clcid=0x
 */
 module.exports = function (grunt) {
     grunt.initConfig({
+        //install all bower dependencies
         bower: {
             install: {
                 options: {
@@ -14,9 +15,11 @@ module.exports = function (grunt) {
             }
         },
 
+        //cleanup staging and temp files
         clean: ["wwwroot/dist", '.tmp'],
 
         copy: {
+            //copy our html files for angular views
             main: {
                 expand: true,
                 cwd: 'wwwroot/app/',
@@ -32,12 +35,14 @@ module.exports = function (grunt) {
             }
         },
 
+        //rev the files
         rev: {
             files: {
                 src: ['wwwroot/dist/**/*.{js,css}']
             }
         },
 
+        //usemin will concat out js and css files
         useminPrepare: {
             html: 'wwwroot/app/index.html',
             options: {
@@ -45,6 +50,7 @@ module.exports = function (grunt) {
             }
         },
 
+        //..and then transform our html to use the compact css and js
         usemin: {
             html: ['wwwroot/dist/index.html'],
             options: {
@@ -52,10 +58,11 @@ module.exports = function (grunt) {
             }
         },
 
+        //minify and shrink up
         uglify: {
             options: {
                 report: 'min',
-                mangle: false
+                mangle: false //don't mangle or it will screw up angular DI!!
             }
         }
     });
