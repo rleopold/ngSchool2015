@@ -12,9 +12,52 @@ module.exports = function (grunt) {
                     cleanTargetDir: true
                 }
             }
+        },
+
+        clean: ["wwwroot/dist", '.tmp'],
+
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'wwwroot/app/',
+                src: ['**', '!js/**', '!lib/**', '!**/*.css'],
+                dest: 'wwwroot/dist/'
+            }
+        },
+
+        rev: {
+            files: {
+                src: ['dist/**/*.{js,css}']
+            }
+        },
+
+        useminPrepare: {
+            html: 'wwwroot/index.html'
+        },
+
+        usemin: {
+            html: ['dist/index.html']
+        },
+
+        uglify: {
+            options: {
+                report: 'min',
+                mangle: false
+            }
         }
     });
 
+    //register tasks
     grunt.registerTask('default', ['bower:install']);
+    grunt.registerTask('pack', ['copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin']);
+
+    //load NPM tasks
     grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-rev');
+    grunt.loadNpmTasks('grunt-usemin');
 };
