@@ -9,7 +9,7 @@
     function config($routeProvider) {
         $routeProvider
             .when('/students', {
-                templateUrl: 'app/partials/students.html',
+                templateUrl: 'app/school/students.html',
                 controller: 'Students',
                 controllerAs: 'vm'
             });
