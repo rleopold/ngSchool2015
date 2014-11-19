@@ -26,12 +26,18 @@
             classService.getClasses()
                 .success(function (data) {
                     vm.classes = data;
-            });
+                })
+                .error(function() {
+                    notificationFactory.error('Something has gone wrong!');
+                });
 
             teacherService.getTeachers()
                 .success(function (data) {
                      vm.teachers = data;
-            });
+                })
+                .error(function () {
+                    notificationFactory.error('Something has gone wrong!');
+                });
         }
 
         function addClass(cls) {
