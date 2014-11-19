@@ -20,8 +20,14 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'wwwroot/app/',
-                src: ['**', '!**/*.js', '!**/*.css'],
+                src: ['**/*.html', '!**/*.js', '!**/*.css'],
                 dest: 'wwwroot/dist/'
+            },
+            fonts: {
+                expand: true,
+                cwd: 'wwwroot/lib/bootstrap/',
+                src: 'fonts/**',
+                dest: 'wwwroot/dist'
             }
         },
 
@@ -32,11 +38,17 @@ module.exports = function (grunt) {
         },
 
         useminPrepare: {
-            html: 'wwwroot/app/index.html'
+            html: 'wwwroot/app/index.html',
+            options: {
+                dest: 'wwwroot/dist'
+            }
         },
 
         usemin: {
-            html: ['wwwroot/dist/index.html']
+            html: ['wwwroot/dist/index.html'],
+            options: {
+                dest: 'wwwroot/dist'
+            }
         },
 
         uglify: {
@@ -49,7 +61,7 @@ module.exports = function (grunt) {
 
     //register tasks
     grunt.registerTask('default', ['bower:install']);
-    grunt.registerTask('pack', ['copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin']);
+    grunt.registerTask('pack', ['clean', 'copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin']);
 
     //load NPM tasks
     grunt.loadNpmTasks('grunt-bower-task');
