@@ -13,6 +13,11 @@
                 templateUrl: 'school/students.html',
                 controller: 'Students',
                 controllerAs: 'vm'
+            })
+            .when('/classes', {
+                templateUrl: 'school/classes.html',
+                controller: 'Classes',
+                controllerAs: 'vm'
             });
     }
 })();

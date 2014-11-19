@@ -12,7 +12,11 @@ namespace VS2015WebDemo
         {
             //inject all MVC dependencies
             services.AddMvc();
+
+            //inject our data stuff
             services.AddSingleton<IStudentRepository, FakeStudentRepo>();
+            services.AddSingleton<ITeacherRepository, FakeTeacherRepo>();
+            services.AddSingleton<IClassRepository, FakeClassRepo>();
         }
         public void Configure(IApplicationBuilder app)
         {

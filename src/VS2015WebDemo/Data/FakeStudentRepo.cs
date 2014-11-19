@@ -15,7 +15,7 @@ namespace VS2015WebDemo.Data
             {
                 new Student {Id= 1, FirstName="Richard", LastName="Leopold", Email="test1@example.com" },
                 new Student {Id= 2, FirstName="Deke", LastName="Yablonkski", Email="test2@example.com" },
-                new Student {Id=3, FirstName="Chadwick", LastName="Bosworth", Email="test3@example.com"}
+                new Student {Id= 3, FirstName="Chadwick", LastName="Bosworth", Email="test3@example.com"}
             };
         }
         public void Delete(int id)
