@@ -23,6 +23,7 @@ module.exports = function (grunt) {
                 src: ['**/*.html', '!**/*.js', '!**/*.css'],
                 dest: 'wwwroot/dist/'
             },
+            //need to copy fonts for bootstrap to work correctly!
             fonts: {
                 expand: true,
                 cwd: 'wwwroot/lib/bootstrap/',
@@ -61,7 +62,7 @@ module.exports = function (grunt) {
 
     //register tasks
     grunt.registerTask('default', ['bower:install']);
-    grunt.registerTask('pack', ['clean', 'copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin']);
+    grunt.registerTask('stage', ['clean', 'copy', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin']);
 
     //load NPM tasks
     grunt.loadNpmTasks('grunt-bower-task');
