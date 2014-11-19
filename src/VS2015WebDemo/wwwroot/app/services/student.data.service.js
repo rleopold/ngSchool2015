@@ -5,11 +5,11 @@
         .module('app')
         .factory('studentService', factory);
 
-    factory.$inject = ['$http'];
+    factory.$inject = ['$http', 'apiServiceBase'];
 
-    function factory($http) {
+    function factory($http, apiServiceBase) {
 
-        var url = 'api/students';
+        var url = apiServiceBase + 'api/students';
 
         var service = {
             getStudents: getStudents,

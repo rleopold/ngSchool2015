@@ -20,23 +20,23 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'wwwroot/app/',
-                src: ['**', '!js/**', '!lib/**', '!**/*.css'],
+                src: ['**', '!**/*.js', '!**/*.css'],
                 dest: 'wwwroot/dist/'
             }
         },
 
         rev: {
             files: {
-                src: ['dist/**/*.{js,css}']
+                src: ['wwwroot/dist/**/*.{js,css}']
             }
         },
 
         useminPrepare: {
-            html: 'wwwroot/index.html'
+            html: 'wwwroot/app/index.html'
         },
 
         usemin: {
-            html: ['dist/index.html']
+            html: ['wwwroot/dist/index.html']
         },
 
         uglify: {
