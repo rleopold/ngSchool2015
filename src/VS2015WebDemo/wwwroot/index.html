@@ -10,8 +10,12 @@
 
     <title>ngSchool - a demo by Richard Leopold</title>
     <!-- Put CSS stuff here-->
+
+    <!-- build:css css/app.min.css-->
     <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="lib/toastr/toastr.css" rel="stylesheet" />
+    <!-- endbuild-->
+
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,11 +56,9 @@
     </header>
 
     <div ng-view></div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
 
     <!-- Put JS files here-->
+    <!-- build:js js/app.min.js-->
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
@@ -68,5 +70,6 @@
     <script src="app/services/student.data.service.js"></script>
     <script src="app/services/notification.factory.js"></script>
     <script src="app/school/students.controller.js"></script>
+    <!-- endbuild-->
 </body>
 </html>
