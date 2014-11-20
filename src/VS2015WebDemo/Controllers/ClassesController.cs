@@ -14,10 +14,12 @@ namespace VS2015WebDemo.Controllers.Controllers
     public class ClassesController : Controller
     {
         private IClassRepository _classes;
+        private ITeacherRepository _teachers;
 
-        public ClassesController(IClassRepository classes)
+        public ClassesController(IClassRepository classes, ITeacherRepository teachers)
         {
             _classes = classes;
+            _teachers = teachers;
         }
 
         // GET: api/values
@@ -25,6 +27,11 @@ namespace VS2015WebDemo.Controllers.Controllers
         public IActionResult Get()
         {
             var classes = _classes.GetAll();
+            foreach(var c in classes)
+            {
+                if(c.Teacher == null)
+                    c.Teacher = _teachers.GetById(c.TeacherId); //hack...it's a demo!
+            }
             return Json(classes);
         }
 

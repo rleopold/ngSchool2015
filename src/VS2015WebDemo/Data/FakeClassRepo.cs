@@ -44,6 +44,7 @@ namespace VS2015WebDemo.Data
             var max = _classes.Max(c => c.Id);
             max++;
             @class.Id = max;
+            @class.TeacherId = @class.Teacher.Id; // just hack it for now...its a demo!
             _classes.Add(@class);
         }
 

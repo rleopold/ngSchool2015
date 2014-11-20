@@ -8,5 +8,6 @@ namespace VS2015WebDemo.Models
         public string Title { get; set; }
         public string Location { get; set; }
         public int TeacherId { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }
