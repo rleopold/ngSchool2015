@@ -18,6 +18,11 @@
                 templateUrl: 'school/classes.html',
                 controller: 'Classes',
                 controllerAs: 'vm'
+            })
+            .when('/teachers', {
+                templateUrl: 'school/teachers.html',
+                controller: 'teachers',
+                controllerAs: 'vm'
             });
     }
 })();
