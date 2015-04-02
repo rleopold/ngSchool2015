@@ -158,6 +158,7 @@ ClientBin/
 *.dbproj.schemaview
 *.pfx
 *.publishsettings
+**/PublishProfiles
 node_modules/
 bower_components/
 lib/
@@ -189,3 +190,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+#ignore the dist folder
+**/wwwroot/dist
