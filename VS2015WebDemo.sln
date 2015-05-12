@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22512.0
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CDC0D580-7095-4041-A24B-89125F478994}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "VS2015WebDemo", "src\VS2015WebDemo\VS2015WebDemo.kproj", "{98F2B34B-8DB6-4F3A-98BA-489D456F18F8}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "VS2015WebDemo", "src\VS2015WebDemo\VS2015WebDemo.xproj", "{98F2B34B-8DB6-4F3A-98BA-489D456F18F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9907E4CF-D3A2-4801-8017-144B695569AD}"
 	ProjectSection(SolutionItems) = preProject
